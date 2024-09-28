@@ -12,12 +12,39 @@
  * LECTURE 02: OBJECT DESTRUCTURING
  *****************************************/
 
-const User = {
+// const User = {
+//   firsName: "John",
+//   age: 27,
+//   gender: "Male",
+//   city: "Madiun",
+// };
+
+// const { firsName: fullName, age,gender, city } = User;
+// console.log(fullName, age, gender, city);
+
+/******************************************
+ * LECTURE 03: SPREAD OPERATORS
+ *****************************************/
+
+const users: string[] = ["John", "Mark", "Merry"];
+console.log(users);
+console.log(...users);
+
+// Creating a shalow copy of arrays
+const copyArrays = [...users];
+copyArrays.push("Steve");
+console.log(copyArrays);
+
+// Creating an array from existing array
+const extendedUsers: string[] = ["Ravin", "Alex", ...users];
+console.log(extendedUsers);
+
+// Spread Operator on Object
+const person = {
   firsName: "John",
-  age: 27,
+  age: 28,
   gender: "Male",
-  city: "Madiun",
 };
 
-const { firsName: fullName, age,gender, city } = User;
-console.log(fullName, age, gender, city);
+const employee = { ...person, salary: 1200, company: "Google" };
+console.log(employee);
